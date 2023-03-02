@@ -5,11 +5,11 @@ import json
 
 def index_view(request):
     context = {}
-    if request.method == 'GET':
+    if request.method == 'POST':
         API_KEY = '5832d3fb7821368ed47f17f2b4cbfb18'
         BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
-        city = request.POST.get('search-form')
+        city = request.POST['search-form']
 
         request_url = f'{BASE_URL}?appid={API_KEY}&q={city}&units=metric'
         response = requests.get(request_url)
