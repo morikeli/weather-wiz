@@ -1,0 +1,120 @@
+* {box-sizing: border-box;}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body::after {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.6;
+    position: absolute;
+    background-image: url(img1.png);
+    background-position: top 1% right 40px;
+    /* background-size: cover; */
+}
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(25, 80, 182);
+    color: white;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+.logo {
+    margin-left: 3%;
+    font: 600 30px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.alert {
+    width: 700px;
+    margin: auto;
+    text-align: center;
+}
+.form-container {
+    margin-top: 12%;
+    margin-bottom: 6%;
+}
+form {
+    margin: auto;
+    height: auto;
+    width: 700px;
+    padding: 15px;
+    border: 3px solid #ddd;
+    box-shadow: 2px 50px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(230, 235, 235, 0.9);
+}
+input[type=text] {
+    width: 89%;
+    padding: 10px;
+    outline-color: aqua;
+    background: #f1f1f1;
+    border: none;
+
+}
+input::placeholder {
+    font: 15px Verdana, Geneva, Tahoma, sans-serif;
+}
+form button {
+    padding: 8px;
+    width: 55px;
+    font: 17px Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+form button img {
+    /* color: white; */
+    height: 20px;
+    width: 20px;
+    margin: -7%;
+
+}
+.image-card {
+    margin: 0% auto;
+    padding: 7px;
+    height: auto;
+    width: 300px;
+    margin-top: -3%;
+    background-color: rgba(235, 235, 230, 0.8);
+}
+.image-card img {height: 100px; width: 285px;}
+.description h5 {
+    padding: 0;
+    font-family: monospace;
+    font-size: 13px;
+}
+.description h4 {
+    text-align: right;
+    border-bottom: 2px solid black;
+}
+.footer {
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    background: rgb(34, 30, 30);
+}
+footer {
+    color: white;
+    margin-left: 4%;
+    font: 700 13px Verdana, Geneva, Tahoma, sans-serif;
+    /* padding: 2px; */
+
+}
+.nav-footer {
+    margin-top: -1.3%;
+    text-align: right;
+    margin-right: 2%;
+    font: 600 13px Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-footer a {
+    margin-right: 1%;
+    text-decoration: none;
+    /* color: ; */
+}
+.home-container {
+    margin-top: 3%;
+}
