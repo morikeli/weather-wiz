@@ -3,24 +3,23 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body::after {
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0.6;
-    position: absolute;
-    background-image: url('../img/img1.png');
-    background-position: top 1% right 40px;
-}
 .navbar {
     color: white;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 15px #00000099;
 }
 .navbar-brand {
     margin-left: 3%;
     font: 600 30px "Open Sans", sans-serif;
 }
-
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: rgba(216, 216, 228, 0.9);
+}
+body .container {
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+.card {
+    margin-bottom: 2%;
+    box-shadow: 0 5px 5px #0000004d;
+}
