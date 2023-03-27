@@ -13,9 +13,41 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-
+                        <h4 class="text-muted fw-bold">Weather update</h4>
+                        <hr>
+                        {% if city is not None %}
+                        
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h5 class="text-muted text-secondary">City: <b>{{ city|title }}, {{ country }}</b></h5>
+                                    <h5 class="text-muted text-secondary">Longitude: <b>{{ long }}</b>, <b>{{ lat }}</b></h5>
+                                    <h5 class="text-muted text-secondary">Weather: <b>{{ weather }}</b></h5>
+                                    <h5 class="text-muted text-secondary">Temperature: <b>{{ temperature }} &deg;C</b></h5>
+                                    <h5 class="text-muted text-secondary">Humidity: <b>{{ humidity }}</b></h5>
+                                    <h5 class="text-muted text-secondary">Wind speed: <b>{{ wind_speed }} m/s</b></h5>
+                                </div>
+                                <div class="col-md-3">
+                                    {% if weather_condition == 'Thunderstorm' %}
+                                        <i class="bi-cloud-lightning-fill"></i>
+                                    {% elif weather_condition == 'Rain' %}
+                                        <i class="bi-cloud-rain-heavy-fill"></i>
+                                    {% elif weather_condition == 'Drizzle' %}
+                                        <i class="bi-cloud-drizzle-fill"></i>
+                                    {% elif weather_condition == 'Snow' %}
+                                        <i class="bi-cloud-snow-fill"></i>
+                                    {% elif weather_condition == 'Clouds' %}
+                                        <i class="bi-clouds-fill"></i>
+                                    {% elif weather_condition == 'Tornado' %}
+                                        <i class="bi-tornado"></i>
+                                    {% elif weather_condition == 'Clear' %}
+                                        <i class="bi-sun-fill"></i>
+                                    {% else %}
+                                        <i class="bi-wind"></i>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-6">
