@@ -118,6 +118,3 @@ STATIC_ROOT = BASE_DIR/'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
-}
