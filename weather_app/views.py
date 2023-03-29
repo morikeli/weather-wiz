@@ -1,11 +1,13 @@
 from django.shortcuts import render
 import requests
+import environ
+import os
 
 
 def index_view(request):
     context = {}
     if request.method == 'GET':
-        API_KEY = ''
+        API_KEY = os.environ['API_KEY']
         BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
         city = request.GET.get('city')
