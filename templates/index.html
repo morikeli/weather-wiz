@@ -3,39 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=0">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title></title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>WeatherWiz &centerdot; Get weather updates daily, anywhere, anytime.</title>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand">WeatherWiz</a>
+            <a class="navbar-brand mx-5"><i class="bi bi-cloud-hail-fill"></i> WeatherWiz</a>
             <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
     <div class="container pt-4">
         <div class="row">
-            <div class="col-md-4 mx-4 my-3">
-                
+            {% for info in weather_info %}
+            <div class="col-md-4">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
+                            <img src="https://openweathermap.org/img/wn/{{ info.icon }}@2x.png" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                <h2 class="card-title">{{ info.city }}, {{ info.country }}</h5>
+                                <p class="small">
+                                    Coordinates: 
+                                    <b>{{ info.lat }}</b> 
+                                    {% if info.lat < 0 %}S{% else %}N{% endif %}, 
+                                    <b>{{ info.long }}</b>
+                                    {% if info.long < 0 %}W{% else %}E{% endif %}
+                                </p>
+                                <table class="table table-sm table-hover table-striped">
+                                    <thead>
+                                        <th>#</th>
+                                        <th>Data</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Temperature</td><td>{{ info.temperature }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weather</td><td>{{ info.weather }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Humidity</td><td>{{ info.humidity }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wind speed</td><td>{{ info.wind_speed }} km/h</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+            {% endfor %}
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
