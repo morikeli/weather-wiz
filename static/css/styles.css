@@ -25,3 +25,7 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: rgba(216, 216, 228, 0.9);
 }
+.indicator {
+    max-height: 50px;
+
+}
