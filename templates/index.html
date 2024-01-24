@@ -23,9 +23,12 @@
         </div>
     </nav>
     <div class="container pt-4">
-        <div class="row">
+        <div class="row" id="info-card">
+            <div class="col-sm-12 text-center">
+                <img id="loading" class="htmx-indicator indicator" src="{{ url_for('static', filename='img/spinning-dots.svg') }}"/>
+            </div>
             {% for info in cities %}
-            <div class="col-md-4">
+            <div class="col-md-4" hx-indicator="#loading">
                 <div class="card mb-3 shadow-sm">
                     <div class="row g-0">
                         <div class="col-md-3">
@@ -33,18 +36,18 @@
                         </div>
                         <div class="col-md-9">
                             <div class="card-body">
-                                <h2 class="card-title">{{ info.name }}, {{ info.sys.country }}</h5>
+                                <h2 class="card-title">{{ info.name }}, {{ info.sys.country }}</h2>
                                 <p class="small">
                                     Location: 
-                                    <b>{{ info.coord.lat }}</b> 
-                                    {% if info.coord.lat < 0 %}S{% else %}N{% endif %}, 
-                                    <b>{{ info.coord.lon }}</b>
-                                    {% if info.coord.lon < 0 %}W{% else %}E{% endif %}
+                                    <b>{{ info.coord.lat }}</b> {% if info.coord.lat < 0 %}S{% else %}N{% endif %}, 
+                                    <b>{{ info.coord.lon }}</b> {% if info.coord.lon < 0 %}W{% else %}E{% endif %}
                                 </p>
                                 <table class="table table-sm table-bordered table-hover table-striped">
-                                    <thead class="table-active">
-                                        <th>#</th>
-                                        <th>Data</th>
+                                    <thead>
+                                        <tr class="table-active">
+                                            <th>#</th>
+                                            <th>Data</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
