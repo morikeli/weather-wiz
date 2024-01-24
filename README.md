@@ -5,4 +5,4 @@
 ## Overview
 
 This is a Flask web-based weather app. The user can search for a city and the search result will be displayed with the relevant weather info.
-
+The website also displays 3 random cities on every page refresh.
