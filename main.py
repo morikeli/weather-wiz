@@ -65,6 +65,3 @@ def select_random_cities():
     
     return render_template('index.html', cities=sampled_cities)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
