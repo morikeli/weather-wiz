@@ -1,18 +1,8 @@
-# Weather website using django & Openweather API
+# Weather-wiz
 
-This is a simple web-based weather app. The website uses OpenWeather API to fetch current weather updates of differrent cities and towns around the world.
+![Screenshot from 2024-01-24 16-03-53](https://github.com/morikeli/weather-wiz/assets/78599959/d166aae2-d321-4845-abb5-2ce31e277660)
 
-Technologies used:
-  - HTML, CSS & JavaScript
-  - Django
-  - OpenWeatherAPI
- 
- Type in any known city name and press Enter or click the search button. The following details will be displayed:
-  - City
-  - country code
-  - latitude & longitude
-  - temperature
-  - weather description 
-  - wind speed
-  - humidity
-  - weather icon
+## Overview
+
+This is a Flask web-based weather app. The user can search for a city and the search result will be displayed with the relevant weather info.
+The website also displays 3 random cities on every page refresh.
