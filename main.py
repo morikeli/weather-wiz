@@ -17,7 +17,6 @@ def query_weather_info_for_city():
     context = {}
     query = request.form.get('q')
 
-    # city = 'Nairobi'
     if request.method == 'POST':
         city = query
         request_url = f'{BASE_URL}?appid={API_KEY}&q={city}&units=metric'
