@@ -13,7 +13,7 @@ The user can search for a city of his/her choice using the search form in the na
 ### Developer instructions
 ```(bash)
   $ cd Desktop
-  $ git clone https://github.com/morikeli/weatherwiz.git
+  $ git clone https://github.com/morikeli/weather-wiz.git
   $ python3 -m venv .weather-app-venv
   $ source .weather-app-venv/bin/activate
   $ pip install -r requirements.txt
